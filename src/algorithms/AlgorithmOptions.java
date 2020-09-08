@@ -82,7 +82,7 @@ public class AlgorithmOptions {
     private void readOptions (String args[]) {
         
         if (args.length == 0) {
-            System.out.println("# Warning: usando instancia por defecto: instances/kroA100.tsp");
+            System.out.println("# Warning: usando instancia por defecto: " + filename);
             System.out.println("           si desea utilizar otra instancia debe proporcionarla (use --instance <file_path>)");
             System.out.println("# Use el argumento `--help' para mayor informacion");
 
