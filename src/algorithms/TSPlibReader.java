@@ -88,8 +88,8 @@ public class TSPlibReader {
     BufferedReader bufferedReader = new BufferedReader(reader);
     String line = bufferedReader.readLine();
     while (line != null) {
-      if (line.trim().startsWith("EOF"))
-        break;
+      //if (line.trim().startsWith("EOF"))
+      //  break;
       if (!found_coord_section) {
         if (line.startsWith("NAME")) {
           name = line.split(":")[1].trim();

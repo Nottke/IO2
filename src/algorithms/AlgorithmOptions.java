@@ -19,6 +19,9 @@ import org.apache.commons.cli.ParseException;
 
 public class AlgorithmOptions {
     /* Parametros por defecto del algoritmo */
+    
+    /* archivo para imprimir la solucion */
+    public String output = "solucion.txt";
 	
     /* archivo de la instancia */
     public String filename = "instances/burma14.tsp";
@@ -87,6 +90,7 @@ public class AlgorithmOptions {
         
         Options options = new Options();
         options.addOption("h", "help", false, "muestra esta ayuda");
+        options.addOption("o", "output", true, "achivo para guardar solucion");
         options.addOption("i", "instance", true, "achivo de instancia (formato TSPLIB)");
         options.addOption("mh", "metaheuristic", true, "metaheuristica a aplicar [ sa ]");
         options.addOption("mhm", "move", true, "movimiento a utilizar en la heuristica [ 2opt | swap ]");
@@ -123,6 +127,14 @@ public class AlgorithmOptions {
             System.out.println("# -seed con valor " + seed);
         } else {
             System.out.println("# Note: semilla " + seed);
+        }
+                        
+        /* Archivo de salida */
+        if (cmd.hasOption("o")) {
+            output = cmd.getOptionValue("o");
+            System.out.println("# -o/output filename " + output);
+        } else {
+            System.err.println("# Note: output " + output);
         }
         
         /* Archivo de instancia */

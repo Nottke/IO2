@@ -8,6 +8,8 @@ package algorithms;
 */
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.io.FileWriter; 
+import java.io.IOException;
 
 public class Tour {
   enum InitialSolution
@@ -93,6 +95,24 @@ public class Tour {
 	public void printCost() {
 		System.out.print("cost: "+ cost);
 	};
+	
+    public void printToFile (String filename) {
+      if (filename == "") 
+        return;
+      try {
+        System.out.println("# Guardando solucion en archivo: "+ filename);
+        FileWriter myWriter = new FileWriter(filename);
+        String sol = String.valueOf(current[0]);
+        for(int i=1; i<current.length; i++) {
+          sol = sol + " " + String.valueOf(current[i]);
+        }
+        myWriter.write(sol);
+        myWriter.close();
+      } catch (IOException e) {
+        System.out.println("Error escribiendo archivo de solucion");
+        e.printStackTrace();
+      }
+    };
 	
     private int delta_cost_swap (int[] tour, int cost, int n1, int n2)
     /*

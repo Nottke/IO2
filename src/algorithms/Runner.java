@@ -97,6 +97,7 @@ public class Runner {
     	System.out.println("\n# Generando solucion de prueba ...");
         Tour test_solution = new Tour (Tour.InitialSolution.DETERMINISTIC, problem);
         test_solution.print();
+        test_solution.printToFile(opciones.output);
         System.exit(0);
       }
         
