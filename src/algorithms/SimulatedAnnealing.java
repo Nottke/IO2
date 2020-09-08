@@ -52,6 +52,15 @@ public class SimulatedAnnealing {
         best_tour.printCost();
       }
     };
+    
+    public void print_solution_tofile (String filename) 
+    /* FUNCTION: print_solution_tofile
+     * INPUT: string the indica la ruta al archivo para escribir la mejor solucion
+     * OUTPUT: ninguno
+     */
+    {
+      best_tour.printToFile(filename);
+    };
 	
 	public void search (Tour initial_solution, Double t_initial, Double t_min, int max_evaluations) 
     /* 

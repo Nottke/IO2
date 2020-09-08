@@ -117,6 +117,7 @@ public class Runner {
         /* Mostrar la mejor solucion encontrada */
         System.out.println("# Terminando ejecucion ...");
         solver.print_best_solution (true);
+        solver.print_solution_tofile(opciones.output);
       } else {
         /* Mostrar la mejor solucion encontrada */
         System.out.println("Error: Metaheuristica no disponible");
