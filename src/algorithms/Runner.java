@@ -13,12 +13,12 @@ import algorithms.Tour.InitialSolution;
  *
  * ICI4144 Investigacion de Operaciones
  * 
- * REVISE LAS INTRUCCIONES DISPONIBLES EN EL PDF DIPONIBLE EN EL AULA VIRTUAL
+ * REVISE LAS INTRUCCIONES DISPONIBLES EN PDF EN EL AULA VIRTUAL
  * 
  * Instrucciones generales:
- *  Implemente los metodos necesarios en este este template 
+ *  Implemente los metodos necesarios en este template 
  *  (clase SimulatedAnnealing.java) para poder ejecutar Simulated Annealing 
- *  para el TSP.
+ *  para resolver el problema del vendedor viajero (TSP).
  *  
  *  En TSP.java implemente los metodos:
  *  - compute_tour_length 
@@ -26,6 +26,8 @@ import algorithms.Tour.InitialSolution;
  *  En SimulatedAnnealing.java implemente los metodos:
  *  - getAcceptanceProbability
  *  - reduceTemperature
+ *
+ * Información general: 
  *
  *  La clase TSPlibReader implementa metodos para leer instancias de TSP
  *  en los diferentes formatos de TSPLIB. 
@@ -35,8 +37,7 @@ import algorithms.Tour.InitialSolution;
  *  
  *  La clase Tour consiste en un tour de TSP junto con su costo. 
  *
- *
- * Notas:
+ * Notas importantes:
  *  - En este codigo las soluciones del TSP (en la clase Tour) se 
  *    representan con un arreglo de enteros de tamaño n+1, donde n 
  *    son los nodos (ciudades) del TSP y la ultima ciudad del tour 
@@ -67,18 +68,18 @@ public class Runner {
     static boolean test_flag = true;
   
     static void print_header () {
-        System.out.println ("*************************************************************");
-        System.out.println ("*************************************************************");
-        System.out.println ("**                                                         **");
-        System.out.println ("**          TEMPLATE SIMULATED ANNEALING FOR TSP           **");
-        System.out.println ("**                                                         **");
-        System.out.println ("**         ICI 4144: Investigacion de Operaciones          **");
-        System.out.println ("**             Profesora: Leslie Perez Caceres             **");
-        System.out.println ("**                                                         **");
-        System.out.println ("**      Pontificia Universidad Catolica de Valparaiso      **");
-        System.out.println ("**                                                         **");
-        System.out.println ("*************************************************************");
-        System.out.println ("*************************************************************");
+        System.out.println ("#*************************************************************");
+        System.out.println ("#*************************************************************");
+        System.out.println ("#**                                                         **");
+        System.out.println ("#**          TEMPLATE SIMULATED ANNEALING FOR TSP           **");
+        System.out.println ("#**                                                         **");
+        System.out.println ("#**         ICI 4144: Investigacion de Operaciones          **");
+        System.out.println ("#**             Profesora: Leslie Perez Caceres             **");
+        System.out.println ("#**                                                         **");
+        System.out.println ("#**      Pontificia Universidad Catolica de Valparaiso      **");
+        System.out.println ("#**                                                         **");
+        System.out.println ("#*************************************************************");
+        System.out.println ("#*************************************************************");
     };
 
     public static void main(String[] args) {
@@ -93,7 +94,7 @@ public class Runner {
       
       /* Codigo utilizado solo para probar la funcion objetivo */
       if (test_flag) {
-    	System.out.println("\nGenerando solucion de prueba ...");
+    	System.out.println("\n# Generando solucion de prueba ...");
         Tour test_solution = new Tour (Tour.InitialSolution.DETERMINISTIC, problem);
         test_solution.print();
         System.exit(0);
@@ -113,7 +114,7 @@ public class Runner {
         solver.search(solution, opciones.t0, opciones.t_min, opciones.max_evaluations);
         		
         /* Mostrar la mejor solucion encontrada */
-        System.out.println("Terminando ejecucion ...");
+        System.out.println("# Terminando ejecucion ...");
         solver.print_best_solution (true);
       } else {
         /* Mostrar la mejor solucion encontrada */
