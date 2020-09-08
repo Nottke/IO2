@@ -39,7 +39,7 @@ import algorithms.Tour.InitialSolution;
  *
  * Notas importantes:
  *  - En este codigo las soluciones del TSP (en la clase Tour) se 
- *    representan con un arreglo de enteros de tamaño n+1, donde n 
+ *    representan con un arreglo de enteros de tamano n+1, donde n 
  *    son los nodos (ciudades) del TSP y la ultima ciudad del tour 
  *    corresponde siempre a la primera ciudad.
  *    Ejemplo para tsp n = 5:
