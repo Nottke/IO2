@@ -27,7 +27,7 @@ import algorithms.Tour.InitialSolution;
  *  - getAcceptanceProbability
  *  - reduceTemperature
  *
- * Información general: 
+ * Informacion general: 
  *
  *  La clase TSPlibReader implementa metodos para leer instancias de TSP
  *  en los diferentes formatos de TSPLIB. 

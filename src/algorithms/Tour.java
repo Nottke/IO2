@@ -236,7 +236,7 @@ public class Tour {
         if (n1 >= problem.getSize() || n2 >= problem.getSize()) return;
         if (n1 < 0 || n2 < 0) return;
         
-        /* identificar el indice mas pequeño */
+        /* identificar el indice mas pequeno */
         s = Math.min(n1,n2);
         e = Math.max(n1,n2);
         

@@ -41,7 +41,7 @@ public class TSP {
         distance = tsplib_instance.get_distance_matrix();
         /* obtener lista de vecinos mas cercanos*/
         nn_list  = tsplib_instance.get_nn();
-        /* obtener tamaño de la instancia */
+        /* obtener tamano de la instancia */
         n = tsplib_instance.get_size();
         /* Descomente para imprimir matriz de distancias*/
         //print_distances();
@@ -87,7 +87,7 @@ public class TSP {
     /* A IMPLEMENTAR
      * FUNCTION: computa el costo de un tour
      * INPUT: arreglo que representa un tour t del TSP. 
-     *        Tamaño n+1, donde la ultima casilla del arreglo t[n] 
+     *        Tamano n+1, donde la ultima casilla del arreglo t[n] 
      *        corresponde al retorno a la ciudad inicial.
      * OUTPUT: costo del tour t
      */
@@ -98,7 +98,7 @@ public class TSP {
     public boolean tsp_check_tour (int[] t)
     /*
      * FUNCTION: revisa la correctitud de una solucion del tsp
-     * INPUT: una solución del tsp
+     * INPUT: una solucion del tsp
      * OUTPUT: TRUE si el tour es valido or FALSE si el tour no es valido
      */
     {
@@ -161,7 +161,7 @@ public class TSP {
     /*
      * FUNCTION: generar una solucion aleatoria
      * INPUT: ninguno
-     * OUTPUT: un arreglo de tamaño nodos+1 con el tour aleatorio
+     * OUTPUT: un arreglo de tamano nodos+1 con el tour aleatorio
      */
     {
         ArrayList<Integer> nodes = new ArrayList<Integer>();
@@ -187,7 +187,7 @@ public class TSP {
      *           nodo mas cercano comenzando del nodo start
      * INPUT: numero del nodo de inicio para la construccion del tour.
      *        Use start=-1 para seleccionar un nodo aleatorio
-     * OUTPUT: un arreglo de tamaño nodos+1 con el tour
+     * OUTPUT: un arreglo de tamano nodos+1 con el tour
      */
     {
         int [] tour = new int[n+1];
@@ -221,7 +221,7 @@ public class TSP {
     /*
      * FUNCTION: generar una solucion determinista
      * INPUT: ninguno
-     * OUTPUT: un arreglo de tamaño nodos+1 con el tour determinista
+     * OUTPUT: un arreglo de tamano nodos+1 con el tour determinista
      */
     {
         ArrayList<Integer> nodes = new ArrayList<Integer>();
