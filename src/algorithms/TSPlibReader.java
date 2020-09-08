@@ -5,7 +5,7 @@ package algorithms;
  * @autor  Leslie Perez Caceres
  * @version 1.0
  *
- * Codigo basado en: http://adibaba.github.io/ACOTSPJava/
+ * Codigo basado en: http://adibaba.github.io/ACOTSPJava/ 
  */
 
 import java.io.BufferedReader;
@@ -50,14 +50,14 @@ public class TSPlibReader {
       /* leer instancia desde un archivo */
       nodeptr = read_etsp(tsp_file_name); 
     } catch (IOException e) {
-      System.err.println("No se pudo leer el archivo. " + e.getMessage());
+      System.err.println("Error: No se pudo leer el archivo. " + e.getMessage());
       System.exit(1);
     }
     /* obtener la matriz de distancias */
     compute_distances();
      /* generar listas de vecinos ordenados */
     compute_nn_lists();
-    System.out.println("  instancia "+ name + " con " + n + " nodos");
+    System.out.println("#  instancia "+ name + " tiene " + n + " nodos");
   }
     
   private point[] read_etsp(String tsp_file_name) throws IOException
@@ -74,16 +74,16 @@ public class TSPlibReader {
     boolean found_coord_section = false;
         
     if (tsp_file_name == null) {
-      System.err.println("Instacia no especificada, abortando...");
+      System.err.println("Error: Instacia no especificada, abortando...");
       System.exit(1);
     }
         
     if (!new File(tsp_file_name).canRead()) {
-      System.err.println("No se puede leer el archivo " + tsp_file_name);
+      System.err.println("Error: No se puede leer el archivo " + tsp_file_name);
       System.exit(1);
     }
         
-    System.out.println("\nLeyendo archivo TSPlib " + tsp_file_name + " ... ");
+    System.out.println("\n# Leyendo archivo TSPlib " + tsp_file_name + " ... ");
     Reader reader = new InputStreamReader(new FileInputStream(tsp_file_name), "UTF8");
     BufferedReader bufferedReader = new BufferedReader(reader);
     String line = bufferedReader.readLine();
