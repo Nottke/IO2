@@ -18,7 +18,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 public class AlgorithmOptions {
-	/* Parametros por defecto del algoritmo */
+    /* Parametros por defecto del algoritmo */
 	
     /* archivo de la instancia */
     public String filename = "instances/burma14.tsp";
@@ -79,9 +79,9 @@ public class AlgorithmOptions {
     private void readOptions (String args[]) {
         
         if (args.length == 0) {
-            System.out.println("Warning: debe proporcionar una instancia (use --instance <file_path>)");
-            System.out.println("         usando instancia por defecto: instances/kroA100.tsp");
-            System.out.println("Use el argumento `--help' para mayor informacion");
+            System.out.println("# Warning: usando instancia por defecto: instances/kroA100.tsp");
+            System.out.println("           si desea utilizar otra instancia debe proporcionarla (use --instance <file_path>)");
+            System.out.println("# Use el argumento `--help' para mayor informacion");
 
         }
         
@@ -103,7 +103,7 @@ public class AlgorithmOptions {
         CommandLineParser parser = new BasicParser();
         try {
             cmd = parser.parse(options, args);
-            System.out.println("\nLeyendo argumentos ...");
+            System.out.println("\n# Leyendo argumentos ...");
         } catch (ParseException e) {
             System.err.println("Error: " + e.getMessage());
             System.exit(1);
@@ -120,17 +120,17 @@ public class AlgorithmOptions {
         /* Semilla */
         if (cmd.hasOption("seed")) {
             seed = Integer.parseInt(cmd.getOptionValue("seed"));
-            System.out.println("-seed con valor " + seed);
+            System.out.println("# -seed con valor " + seed);
         } else {
-            System.out.println("Note: semilla " + seed);
+            System.out.println("# Note: semilla " + seed);
         }
         
         /* Archivo de instancia */
         if (cmd.hasOption("i")) {
             filename = cmd.getOptionValue("i");
-            System.out.println("-i/instance filename " + filename);
+            System.out.println("# -i/instance filename " + filename);
         } else {
-            System.err.println("Note: instancia " + filename);
+            System.err.println("# Note: instancia " + filename);
         }
         
         /* Seleccion de la metaheuristica */
@@ -143,8 +143,10 @@ public class AlgorithmOptions {
                 System.err.println("Error: opcion no reconocida -mh "+ value);
                 System.exit(1);
             }
-            System.out.println("-mh/metaheuristic " + metaheuristic);
-        } 
+            System.out.println("# -mh/metaheuristic " + metaheuristic);
+        } else {
+	    System.out.println("# Note: metaheuristic " + metaheuristic);
+	}
         
         /* Seleccion del movimiento para la metaheuristica */
         if (cmd.hasOption("mhm")){
@@ -158,8 +160,10 @@ public class AlgorithmOptions {
                 System.err.println("Error: opcion no reconocida -mhm "+ value);
                 System.exit(1);
             }
-            System.out.println("-mhm/move " + mh_move);
-        } 
+            System.out.println("# -mhm/move " + mh_move);
+        } else {
+	    System.out.println("# Node: move " + mh_move);
+	}
         
         /* Esquema de enfriamiento */
         if (cmd.hasOption("tc")){
@@ -175,39 +179,41 @@ public class AlgorithmOptions {
                 System.err.println("Error: opcion no reconocida -tc "+ value);
                 System.exit(1);
             }
-            System.out.println("-tc/cooling " + cooling);
-        } 
+            System.out.println("# -tc/cooling " + cooling);
+        } else {
+	    System.out.println("# Note: cooling " + cooling);
+	}
         
         /* Parametro alfa */
         if (cmd.hasOption("a")) {
             alpha = Double.parseDouble(cmd.getOptionValue("alpha"));
-            System.out.println("-a/alpha " + alpha);
+            System.out.println("# -a/alpha " + alpha);
         } else {
-            System.out.println("Note: alpha " + alpha);
+            System.out.println("# Note: alpha " + alpha);
         }
 
         /* Temperatura inicial */
         if (cmd.hasOption("t0")) {
             t0 = Double.parseDouble(cmd.getOptionValue("t0"));
-            System.out.println("-t0 " + t0);
+            System.out.println("# -t0 " + t0);
         } else {
-            System.out.println("Note: t0 " + t0);
+            System.out.println("# Note: t0 " + t0);
         }
         
         /* Temperatura minima */
         if (cmd.hasOption("tmin")) {
             t_min = Double.parseDouble(cmd.getOptionValue("tmin"));
-            System.out.println("-tmin " + t_min);
+            System.out.println("# -tmin " + t_min);
         } else {
-            System.out.println("Note: tmin " + t_min);
+            System.out.println("# Note: tmin " + t_min);
         }
 
         /* Numero maximo de evaluaciones */
         if (cmd.hasOption("evaluations")) {
             max_evaluations = Integer.parseInt(cmd.getOptionValue("evaluations"));
-            System.out.println("-e/evaluations " + max_evaluations);
+            System.out.println("# -e/evaluations " + max_evaluations);
         } else {
-            System.out.println("Note: evaluations " + max_evaluations);
+            System.out.println("# Note: evaluations " + max_evaluations);
         }
         
         validateOptions();
