@@ -1,3 +1,5 @@
- #!/usr/bin/env Rscript
- 
- source("plots/boxplot.R")
+#!/bin/bash
+
+cd plots
+Rscript boxplot.R
+cd ..
