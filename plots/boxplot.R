@@ -2,8 +2,11 @@
 
 # Escriba aqui los resultados de las ejecuciones de dos algoritmos
 # para ser comparados
-resultados1 <- c(103410, 94839, 89182, 100987, 99981, 103485, 92925, 104208, 102103, 98276) #alfa 0.98
-resultados2 <- c(84882, 78590, 84322, 89700, 82827, 76523, 79276, 83812, 84359, 77778) #alfa = 0.99
+resultados1 <- c(1169,1063,987,1039,1044,1099,1105,975,1156,991) #orden dado
+resultados2 <- c(553,623,597,554,558, 552,528,573,559,564) #vecino mas cercano
+
+#resultados1 <- c(103410, 94839, 89182, 100987, 99981, 103485, 92925, 104208, 102103, 98276) #alfa 0.98
+#resultados2 <- c(84882, 78590, 84322, 89700, 82827, 76523, 79276, 83812, 84359, 77778) #alfa = 0.99
 
 # Reemplaze aqui con el nombre del archivo a para crear el boxplot
 plotfile = "ejemplo-boxplot.png"
@@ -11,6 +14,7 @@ plotfile = "ejemplo-boxplot.png"
 # Crear una matrix para el plot
 all.data = cbind(resultados1, resultados2)
 # Nombres de las pruebas o algoritmos
+#colnames (all.data) <- c("Orden dado", "Vecino mas cercano")
 colnames (all.data) <- c("0.98", "0.99")
 
 # data.matrix is a matrix or a data frame
