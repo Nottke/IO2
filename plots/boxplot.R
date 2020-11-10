@@ -14,8 +14,8 @@ plotfile = "ejemplo-boxplot.png"
 # Crear una matrix para el plot
 all.data = cbind(resultados1, resultados2)
 # Nombres de las pruebas o algoritmos
-#colnames (all.data) <- c("Orden dado", "Vecino mas cercano")
-colnames (all.data) <- c("0.98", "0.99")
+colnames (all.data) <- c("Orden dado", "Vecino mas cercano")
+#colnames (all.data) <- c("0.98", "0.99")
 
 # data.matrix is a matrix or a data frame
 # Customize the plot using par:
