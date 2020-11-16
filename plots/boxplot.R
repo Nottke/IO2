@@ -5,14 +5,16 @@
 resultados1 <- c(1169,1063,987,1039,1044,1099,1105,975,1156,991) #orden dado
 resultados2 <- c(553,623,597,554,558, 552,528,573,559,564) #vecino mas cercano
 
-#resultados1 <- c(103410, 94839, 89182, 100987, 99981, 103485, 92925, 104208, 102103, 98276) #alfa 0.98
-#resultados2 <- c(84882, 78590, 84322, 89700, 82827, 76523, 79276, 83812, 84359, 77778) #alfa = 0.99
+# Resultados para parametro alfa
+#resultados1 <- c(98635, 88693, 92823, 102833, 97891, 95086, 100768, 91539, 93955, 91434) #alfa 0.98
+#resultados2 <- c(85566, 92228, 82581, 92409, 76128, 84312, 93004, 75560, 84186, 84850) #alfa 0.99
 
 # Reemplaze aqui con el nombre del archivo a para crear el boxplot
 plotfile = "ejemplo-boxplot.png"
 
 # Crear una matrix para el plot
 all.data = cbind(resultados1, resultados2)
+
 # Nombres de las pruebas o algoritmos
 colnames (all.data) <- c("Orden dado", "Vecino mas cercano")
 #colnames (all.data) <- c("0.98", "0.99")
